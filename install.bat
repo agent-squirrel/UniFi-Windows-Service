@@ -75,7 +75,7 @@ echo Installing controller (Click through as normal)
 start /w %temp%\unifi.exe /s
 echo.
 echo Waiting 10 seconds
-PING 1.1.1.1 -n 1 -w 10000 >NUL
+PING 127.0.0.1 -n 1 -w 11000 >NUL
 echo.
 echo Killing Unifi if running
 taskkill.exe /F /FI "WINDOWTITLE eq Ubiquiti*" >nul 2>&1
@@ -84,7 +84,7 @@ echo Purposefully starting Unifi to generate configs
 start "" "%userprofile%\Ubiquiti UniFi\lib\ace.jar" "ui"
 echo.
 echo Waiting 60 seconds for Unifi to come alive
-PING 1.1.1.1 -n 1 -w 60000 >NUL
+PING 127.0.0.1 -n 1 -w 61000 >NUL
 echo.
 echo Killing Unifi
 taskkill.exe /F /FI "WINDOWTITLE eq Ubiquiti*" >nul 2>&1
