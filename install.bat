@@ -64,6 +64,10 @@ echo Downloading dependencies
 powershell -Command "(New-Object Net.WebClient).DownloadFile('http://esperto.com.au/repo/jre/windows/x64/latest.exe', '%temp%\jre.exe')"
 powershell -Command "(New-Object Net.WebClient).DownloadFile('http://dl.ubnt.com/unifi/5.7.20/UniFi-installer.exe', '%temp%\unifi.exe')"
 echo.
+echo Stopping UniFi if running
+echo.
+net stop UniFi
+echo.
 echo Installing dependencies
 start /w %temp%\jre.exe /s
 echo.
