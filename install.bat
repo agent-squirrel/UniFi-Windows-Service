@@ -66,7 +66,7 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('http://dl.ubnt.com
 echo.
 echo Stopping UniFi if running
 echo.
-net stop UniFi
+net stop UniFi >nul 2>&1
 echo.
 echo Installing dependencies
 start /w %temp%\jre.exe /s
