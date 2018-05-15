@@ -62,11 +62,7 @@ echo.
 
 echo Downloading dependencies
 powershell -Command "(New-Object Net.WebClient).DownloadFile('http://esperto.com.au/repo/jre/windows/x64/latest.exe', '%temp%\jre.exe')"
-powershell -Command "(New-Object Net.WebClient).DownloadFile('http://dl.ubnt.com/unifi/5.7.20/UniFi-installer.exe', '%temp%\unifi.exe')"
-echo.
-echo Stopping UniFi if running
-echo.
-net stop UniFi >nul 2>&1
+powershell -Command "(New-Object Net.WebClient).DownloadFile('http://dl.ubnt.com/unifi/5.6.37/UniFi-installer.exe', '%temp%\unifi.exe')"
 echo.
 echo Installing dependencies
 start /w %temp%\jre.exe /s
@@ -75,7 +71,7 @@ echo Installing controller (Click through as normal)
 start /w %temp%\unifi.exe /s
 echo.
 echo Waiting 10 seconds
-PING 127.0.0.1 -n 1 -w 11000 >NUL
+PING 1.1.1.1 -n 1 -w 10000 >NUL
 echo.
 echo Killing Unifi if running
 taskkill.exe /F /FI "WINDOWTITLE eq Ubiquiti*" >nul 2>&1
@@ -84,7 +80,7 @@ echo Purposefully starting Unifi to generate configs
 start "" "%userprofile%\Ubiquiti UniFi\lib\ace.jar" "ui"
 echo.
 echo Waiting 60 seconds for Unifi to come alive
-PING 127.0.0.1 -n 1 -w 61000 >NUL
+PING 1.1.1.1 -n 1 -w 60000 >NUL
 echo.
 echo Killing Unifi
 taskkill.exe /F /FI "WINDOWTITLE eq Ubiquiti*" >nul 2>&1
