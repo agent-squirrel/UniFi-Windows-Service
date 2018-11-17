@@ -57,7 +57,7 @@ netsh advfirewall firewall add rule name="8443 for UniFi web GUI" dir=in action=
 netsh advfirewall firewall add rule name="8880 for UniFi" dir=in action=allow protocol=TCP localport=8880
 netsh advfirewall firewall add rule name="8843 for UniFi" dir=in action=allow protocol=TCP localport=8843
 netsh advfirewall firewall add rule name="10001 for UniFi" dir=in action=allow protocol=UDP localport=10001
-netsh advfirewall firewall add rule name="3478 for UniFi" dir=in action=allow protocol=UDP localport=3748
+netsh advfirewall firewall add rule name="3478 for UniFi" dir=in action=allow protocol=UDP localport=3478
 echo.
 
 echo Downloading dependencies
