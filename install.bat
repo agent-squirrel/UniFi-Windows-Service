@@ -61,8 +61,8 @@ netsh advfirewall firewall add rule name="3478 for UniFi" dir=in action=allow pr
 echo.
 
 echo Downloading dependencies
-powershell -Command "(New-Object Net.WebClient).DownloadFile('http://esperto.com.au/repo/jre/windows/x64/latest.exe', '%temp%\jre.exe')"
-powershell -Command "(New-Object Net.WebClient).DownloadFile('http://dl.ubnt.com/unifi/5.7.23/UniFi-installer.exe', '%temp%\unifi.exe')"
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com/agent-squirrel/UniFi-Windows-Service/blob/master/jre-8u361-windows-i586-iftw.exe', '%temp%\jre.exe')"
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.ui.com/unifi/7.3.76/UniFi-installer.exe', '%temp%\unifi.exe')"
 echo.
 echo Killing Unifi if running
 taskkill.exe /F /FI "WINDOWTITLE eq Ubiquiti*" >nul 2>&1
